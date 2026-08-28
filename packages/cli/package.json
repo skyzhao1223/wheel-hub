@@ -1,0 +1,43 @@
+{
+  "name": "wheelhub",
+  "version": "0.1.0",
+  "description": "Stop reinventing the wheel. Find and evaluate open-source solutions from your terminal.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "wheelhub": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cli",
+    "github",
+    "awesome",
+    "developer-tools",
+    "open-source"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyzhao1223/wheelhub.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/skyzhao1223/wheelhub#readme",
+  "bugs": "https://github.com/skyzhao1223/wheelhub/issues",
+  "dependencies": {
+    "@wheelhub/core": "*",
+    "commander": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.2"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

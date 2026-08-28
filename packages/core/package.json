@@ -1,0 +1,42 @@
+{
+  "name": "@wheelhub/core",
+  "version": "0.1.0",
+  "description": "GitHub data aggregation and smart evaluation scoring engine",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "!dist/*.test.js",
+    "!dist/*.test.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test dist/score.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "github",
+    "scoring",
+    "evaluation",
+    "open-source"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyzhao1223/wheelhub.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/skyzhao1223/wheelhub#readme",
+  "bugs": "https://github.com/skyzhao1223/wheelhub/issues",
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.2"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
