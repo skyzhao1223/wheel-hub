@@ -1,5 +1,5 @@
 {
-  "name": "wheelhub",
+  "name": "@wheelhub/cli",
   "version": "0.1.0",
   "description": "Stop reinventing the wheel. Find and evaluate open-source solutions from your terminal.",
   "type": "module",
