@@ -15,5 +15,6 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - run: npm run build -w @wheel-hub/core
       - run: npm run build --workspaces --if-present
       - run: npm test --workspaces --if-present

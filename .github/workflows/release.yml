@@ -18,6 +18,7 @@ jobs:
           cache: npm
           registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: npm run build -w @wheel-hub/core
       - run: npm test --workspaces --if-present
       - name: Publish (skip already-published versions)
         env:
