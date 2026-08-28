@@ -1,6 +1,6 @@
 {
-  "name": "@wheelhub/core",
-  "version": "0.1.0",
+  "name": "@wheel-hub/core",
+  "version": "0.1.1",
   "description": "GitHub data aggregation and smart evaluation scoring engine",
   "type": "module",
   "main": "dist/index.js",
@@ -26,11 +26,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skyzhao1223/wheelhub.git",
+    "url": "git+https://github.com/skyzhao1223/wheel-hub.git",
     "directory": "packages/core"
   },
-  "homepage": "https://github.com/skyzhao1223/wheelhub#readme",
-  "bugs": "https://github.com/skyzhao1223/wheelhub/issues",
+  "homepage": "https://github.com/skyzhao1223/wheel-hub#readme",
+  "bugs": "https://github.com/skyzhao1223/wheel-hub/issues",
   "devDependencies": {
     "@types/node": "^24.0.0",
     "typescript": "^5.9.2"

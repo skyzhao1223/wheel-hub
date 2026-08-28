@@ -1,11 +1,11 @@
 {
-  "name": "@wheelhub/mcp",
-  "version": "0.1.0",
+  "name": "@wheel-hub/mcp",
+  "version": "0.1.1",
   "description": "MCP server exposing wheelhub open-source evaluation to AI coding agents",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "wheelhub-mcp": "dist/index.js"
+    "wheel-hub-mcp": "dist/index.js"
   },
   "files": [
     "dist"
@@ -23,15 +23,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skyzhao1223/wheelhub.git",
+    "url": "git+https://github.com/skyzhao1223/wheel-hub.git",
     "directory": "packages/mcp"
   },
-  "homepage": "https://github.com/skyzhao1223/wheelhub#readme",
-  "bugs": "https://github.com/skyzhao1223/wheelhub/issues",
+  "homepage": "https://github.com/skyzhao1223/wheel-hub#readme",
+  "bugs": "https://github.com/skyzhao1223/wheel-hub/issues",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.18.0",
     "@wheelhub/core": "*",
-    "zod": "^3.25.76"
+    "zod": "^3.25.76",
+    "@wheel-hub/core": "*"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

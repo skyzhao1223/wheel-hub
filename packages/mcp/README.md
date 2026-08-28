@@ -1,6 +1,6 @@
-# @wheelhub/mcp
+# @wheel-hub/mcp
 
-MCP server exposing [wheelhub](https://github.com/skyzhao1223/wheelhub) open-source evaluation to AI coding agents (Claude Code, opencode, Cursor, Windsurf, …).
+MCP server exposing [wheel-hub](https://github.com/skyzhao1223/wheel-hub) open-source evaluation to AI coding agents (Claude Code, opencode, Cursor, Windsurf, …).
 
 ## Tools
 
@@ -13,7 +13,7 @@ MCP server exposing [wheelhub](https://github.com/skyzhao1223/wheelhub) open-sou
 ## Setup
 
 ```bash
-claude mcp add wheelhub --env GITHUB_TOKEN=ghp_xxx -- npx @wheelhub/mcp
+claude mcp add wheel-hub --env GITHUB_TOKEN=ghp_xxx -- npx @wheel-hub/mcp
 ```
 
 > Pass `GITHUB_TOKEN` explicitly through your client's `env` config — MCP clients only

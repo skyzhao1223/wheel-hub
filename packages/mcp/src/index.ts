@@ -2,7 +2,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-import { evaluate, getRepo, searchRepos } from "@wheelhub/core";
+import { evaluate, getRepo, searchRepos } from "@wheel-hub/core";
 
 function parseRepo(input: string): string {
   const match = input.match(/github\.com\/([\w.-]+\/[\w.-]+)/);
@@ -10,7 +10,7 @@ function parseRepo(input: string): string {
 }
 
 const server = new McpServer({
-  name: "wheelhub",
+  name: "wheel-hub",
   version: "0.1.0",
 });
 

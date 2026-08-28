@@ -1,11 +1,11 @@
-# @wheelhub/core
+# @wheel-hub/core
 
-GitHub data aggregation and smart evaluation scoring engine behind [wheelhub](https://github.com/skyzhao1223/wheelhub).
+GitHub data aggregation and smart evaluation scoring engine behind [wheel-hub](https://github.com/skyzhao1223/wheel-hub).
 
 ## Usage
 
 ```ts
-import { searchRepos, evaluate } from "@wheelhub/core";
+import { searchRepos, evaluate } from "@wheel-hub/core";
 
 const repos = await searchRepos("background job scheduler", { language: "TypeScript", limit: 5 });
 const evaluations = repos.map(evaluate).sort((a, b) => b.score - a.score);

@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 import { Command } from "commander";
-import { evaluate, getRepo, searchRepos } from "@wheelhub/core";
+import { createRequire } from "node:module";
+import { evaluate, getRepo, searchRepos } from "@wheel-hub/core";
+
+const require = createRequire(import.meta.url);
+const { version } = require("../package.json") as { version: string };
 
 function parseRepo(input: string): string {
   const match = input.match(/github\.com\/([\w.-]+\/[\w.-]+)/);
@@ -23,9 +27,9 @@ async function run(fn: () => Promise<void>): Promise<void> {
 const program = new Command();
 
 program
-  .name("wheelhub")
+  .name("wheel-hub")
   .description("Stop reinventing the wheel. Find and evaluate open-source solutions.")
-  .version("0.1.0");
+  .version(version);
 
 program
   .command("find")
