@@ -45,8 +45,13 @@ Then just ask your agent: *"before you implement, use wheel-hub to check what ex
 ### CLI (for humans)
 
 ```bash
-npx wheel-hub find "SSO login" --lang typescript
-npx wheel-hub evaluate ollama/ollama
+# one-off
+npx @wheel-hub/cli find "SSO login" --lang typescript
+npx @wheel-hub/cli evaluate ollama/ollama
+
+# or install for the `wheel-hub` command
+npm i -g @wheel-hub/cli
+wheel-hub find "SSO login"
 ```
 
 ## Tools
