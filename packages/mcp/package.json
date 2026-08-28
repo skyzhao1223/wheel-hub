@@ -1,6 +1,6 @@
 {
   "name": "@wheel-hub/mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "MCP server exposing wheelhub open-source evaluation to AI coding agents",
   "type": "module",
   "main": "dist/index.js",
@@ -30,7 +30,6 @@
   "bugs": "https://github.com/skyzhao1223/wheel-hub/issues",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.18.0",
-    "@wheelhub/core": "*",
     "zod": "^3.25.76",
     "@wheel-hub/core": "*"
   },

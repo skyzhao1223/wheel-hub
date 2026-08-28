@@ -1,6 +1,6 @@
 {
   "name": "@wheel-hub/cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Stop reinventing the wheel. Find and evaluate open-source solutions from your terminal.",
   "type": "module",
   "main": "dist/index.js",
@@ -29,7 +29,6 @@
   "homepage": "https://github.com/skyzhao1223/wheel-hub#readme",
   "bugs": "https://github.com/skyzhao1223/wheel-hub/issues",
   "dependencies": {
-    "@wheelhub/core": "*",
     "commander": "^14.0.0",
     "@wheel-hub/core": "*"
   },

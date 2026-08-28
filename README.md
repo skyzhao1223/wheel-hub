@@ -87,6 +87,8 @@ Verdicts: `≥75 adopt` · `≥55 adapt` · `≥35 inspect` · `<35 / archived a
 
 ## Roadmap
 
+- [ ] License fallback for `NOASSERTION` repos: parse the license file itself (e.g. the kernel's COPYING declares GPL-2.0 but GitHub classifies it as "Other")
+
 - [ ] Awesome-list mining as a secondary signal source
 - [ ] Star-history curves via OSSInsight data
 - [ ] `wheel-hub watch` — get notified when your stack's dependencies go stale
