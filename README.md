@@ -45,8 +45,8 @@ Then just ask your agent: *"before you implement, use wheelhub to check what exi
 ### CLI (for humans)
 
 ```bash
-npx wheelhub find "SSO login" --lang typescript
-npx wheelhub evaluate ollama/ollama
+npx @wheelhub/cli find "SSO login" --lang typescript
+npx @wheelhub/cli evaluate ollama/ollama
 ```
 
 ## Tools
@@ -76,9 +76,9 @@ Verdicts: `≥75 adopt` · `≥55 adapt` · `≥35 inspect` · `<35 / archived a
 
 | Package | Description |
 |---------|-------------|
-| [`@wheelhub/core`](packages/core) | GitHub aggregation + scoring engine |
-| [`@wheelhub/mcp`](packages/mcp) | MCP server for AI agents |
-| [`wheelhub`](packages/cli) | Terminal CLI |
+| [`@wheelhub/core`](https://www.npmjs.com/package/@wheelhub/core) | GitHub aggregation + scoring engine |
+| [`@wheelhub/mcp`](https://www.npmjs.com/package/@wheelhub/mcp) | MCP server for AI agents |
+| [`@wheelhub/cli`](https://www.npmjs.com/package/@wheelhub/cli) | Terminal CLI |
 
 ## Roadmap
 
