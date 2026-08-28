@@ -19,9 +19,29 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm test --workspaces --if-present
-      - run: npm publish --workspaces --access public
+      - name: Publish (skip already-published versions)
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          failed=0
+          for ws in packages/*; do
+            name=$(node -p "require('./$ws/package.json').name")
+            ver=$(node -p "require('./$ws/package.json').version")
+            if npm view "$name@$ver" version >/dev/null 2>&1; then
+              echo "$name@$ver already published, skipping"
+              continue
+            fi
+            if ! npm publish -w "$ws" --access public; then
+              sleep 60
+              if npm view "$name@$ver" version >/dev/null 2>&1; then
+                echo "$name@$ver publish succeeded (registry cache lag)"
+              else
+                echo "$name@$ver publish failed"
+                failed=1
+              fi
+            fi
+          done
+          exit $failed
       - uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
