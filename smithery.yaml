@@ -1,0 +1,20 @@
+# Smithery (https://smithery.ai) configuration for the wheel-hub MCP server.
+# Smithery crawls GitHub repos for this file to enable one-click installs.
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      githubToken:
+        type: string
+        description: >
+          Optional GitHub personal access token. Raises the GitHub API rate
+          limit from 60 req/h (anonymous) to 5,000 req/h. The server starts
+          fine without it.
+  commandFunction: |-
+    (config) => ({
+      command: 'npx',
+      args: ['-y', '@wheel-hub/mcp'],
+      env: config && config.githubToken ? { GITHUB_TOKEN: config.githubToken } : {}
+    })
