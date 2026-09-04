@@ -1,8 +1,12 @@
 #!/usr/bin/env node
+import { createRequire } from "node:module";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import { evaluate, getRepo, searchRepos } from "@wheel-hub/core";
+
+const require = createRequire(import.meta.url);
+const { version } = require("../package.json") as { version: string };
 
 function parseRepo(input: string): string {
   const match = input.match(/github\.com\/([\w.-]+\/[\w.-]+)/);
@@ -11,7 +15,7 @@ function parseRepo(input: string): string {
 
 const server = new McpServer({
   name: "wheel-hub",
-  version: "0.1.0",
+  version,
 });
 
 server.tool(
