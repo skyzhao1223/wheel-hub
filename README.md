@@ -1,5 +1,7 @@
 # ⚙️ wheel-hub
 
+[![skyzhao1223/wheel-hub MCP server](https://glama.ai/mcp/servers/skyzhao1223/wheel-hub/badges/score.svg)](https://glama.ai/mcp/servers/skyzhao1223/wheel-hub)
+
 **Stop reinventing the wheel. Search, score and adopt the best open-source solutions — before you write a line of code.**
 
 wheel-hub is an MCP server + CLI that makes both AI coding agents and humans check the open-source ecosystem first: given a feature or problem, it finds existing solutions and scores them on popularity, momentum, maintenance and trust, then tells you whether to **adopt**, **adapt**, **inspect** or **avoid**.
