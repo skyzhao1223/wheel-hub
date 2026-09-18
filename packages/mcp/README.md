@@ -1,5 +1,7 @@
 # @wheel-hub/mcp
 
+mcp-name: io.github.skyzhao1223/wheel-hub
+
 MCP server exposing [wheel-hub](https://github.com/skyzhao1223/wheel-hub) open-source evaluation to AI coding agents (Claude Code, opencode, Cursor, Windsurf, …).
 
 ## Tools
