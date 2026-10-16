@@ -11,7 +11,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build -w @wheel-hub/core && npm run build -w @wheel-hub/mcp && npm run build -w @wheel-hub/cli",
     "test": "npm run test --workspaces --if-present"
   },
   "keywords": [
