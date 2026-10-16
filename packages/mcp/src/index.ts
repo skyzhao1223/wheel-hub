@@ -18,14 +18,20 @@ const server = new McpServer({
   version,
 });
 
-server.tool(
+server.registerTool(
   "search_oss",
-  "Search GitHub for high-quality open-source solutions before implementing a feature. Returns ranked candidates with stars and descriptions.",
   {
-    query: z.string().describe("What to look for, e.g. 'background job scheduler', 'SSO login'"),
-    language: z.string().optional().describe("Filter by programming language"),
-    min_stars: z.number().optional().describe("Minimum star count (default 100)"),
-    limit: z.number().optional().describe("Max results (default 10)"),
+    title: "Search open-source solutions",
+    description:
+      "Search GitHub for high-quality open-source solutions before implementing a feature. Returns ranked candidates with stars and descriptions.",
+    // Read-only, repeatable lookups against public GitHub data.
+    annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
+    inputSchema: {
+      query: z.string().describe("What to look for, e.g. 'background job scheduler', 'SSO login'"),
+      language: z.string().optional().describe("Filter by programming language"),
+      min_stars: z.number().optional().describe("Minimum star count (default 100)"),
+      limit: z.number().optional().describe("Max results (default 10)"),
+    },
   },
   async ({ query, language, min_stars, limit }) => {
     const repos = await searchRepos(query, { language, minStars: min_stars, limit });
@@ -39,11 +45,16 @@ server.tool(
   },
 );
 
-server.tool(
+server.registerTool(
   "evaluate_repo",
-  "Score a single GitHub repository (0-100) on popularity, momentum, maintenance and trust, with an adopt/adapt/inspect/avoid verdict.",
   {
-    repo: z.string().describe("Repository in 'owner/name' format or a GitHub URL"),
+    title: "Evaluate a repository",
+    description:
+      "Score a single GitHub repository (0-100) on popularity, momentum, maintenance and trust, with an adopt/adapt/inspect/avoid verdict.",
+    annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
+    inputSchema: {
+      repo: z.string().describe("Repository in 'owner/name' format or a GitHub URL"),
+    },
   },
   async ({ repo }) => {
     const evaluation = evaluate(await getRepo(parseRepo(repo)));
@@ -59,13 +70,18 @@ server.tool(
   },
 );
 
-server.tool(
+server.registerTool(
   "compare_alternatives",
-  "Search for alternatives to a feature/tool and evaluate each one. Use before writing new code to avoid reinventing the wheel. Returns a ranked verdict table.",
   {
-    query: z.string().describe("Feature or capability to find alternatives for"),
-    language: z.string().optional().describe("Preferred programming language"),
-    top: z.number().optional().describe("Number of candidates to evaluate (default 5)"),
+    title: "Compare alternatives",
+    description:
+      "Search for alternatives to a feature/tool and evaluate each one. Use before writing new code to avoid reinventing the wheel. Returns a ranked verdict table.",
+    annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
+    inputSchema: {
+      query: z.string().describe("Feature or capability to find alternatives for"),
+      language: z.string().optional().describe("Preferred programming language"),
+      top: z.number().optional().describe("Number of candidates to evaluate (default 5)"),
+    },
   },
   async ({ query, language, top }) => {
     const repos = await searchRepos(query, { language, limit: top ?? 5 });
